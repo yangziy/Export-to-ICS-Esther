@@ -15,7 +15,7 @@ var cal = ics();
 courses = pull_data()
 for (var i = 0; i < courses.length; i++) {
     course = courses[i]
-    cal.addEvent(course.name, 'description', course.loc, course.first_class_start, course.first_class_end, { 'freq': 'WEEKLY', 'until': course.until_date, 'interval': 1, 'byday': course.days });
+    cal.addEvent(course.name, course.code, course.loc, course.first_class_start, course.first_class_end, { 'freq': 'WEEKLY', 'until': course.until_date, 'interval': 1, 'byday': course.days });
 }
 cal.download("course_schedule");
 
